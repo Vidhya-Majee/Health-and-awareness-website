@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+ /* about page css*/
+
+ body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0d1117;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    position: relative;
+  }
+  
+  .nav-links a.active,
+  .nav-links a:hover {
+    font-weight: 600;
+    border-bottom: 2px solid #58a6ff;
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, #0d1117, #1f2937);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  .content-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .highlights {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .highlight-card {
+    flex: 1;
+    min-width: 250px;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+  
+  .highlight-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #0d1117;
+    color: #ccc;
+    margin-top: 3rem;
+  } 
+
+  /* reviews page  css */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #f39c12;
+}
+
+.cart-btn {
+    background-color: #f39c12;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+    background-color: #e67e22;
+}
+
+.reviews-section,
+.review-form-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.reviews-section h1,
+.review-form-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.reviews-container .review {
+    background-color: #ecf0f1;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 5px solid #f39c12;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.reviews-container .review:hover {
+    transform: scale(1.02);
+}
+
+.review h3 {
+    margin: 0 0 0.5rem;
+    color: #34495e;
+}
+
+.review-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-form-section input,
+.review-form-section textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+}
+/* footer */
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.footer {
+  background-color: #0d1117;
+  color: #ccc;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h3 {
+  color: #1abc9c;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #1abc9c;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #1abc9c;
+}
+
+.footer-newsletter input[type="email"] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.footer-newsletter button {
+  padding: 0.5rem 1rem;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.footer-newsletter button:hover {
+  background-color: #16a085;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+.hero-text {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.content-card {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.highlight-card {
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+
+
+
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">HerbalNest</div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="e-commerce.html">Products</a>
+      <a href="about.html" class="active">About us</a>
+      <a href="contact.html">Contact us</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Welcome to HerbalNest</h1>
+      <p>Your gateway to the latest and greatest herbal and heltcare products.</p>
+    </div>
+  </header>
+
+  <section class="content-card">
+    <h2>Who We Are</h2>
+    <p>We are selling herbal products which make yours body healthy and fit</p>
+  </section>
+
+  <section class="highlights">
+    <div class="highlight-card">
+      <h3>Quality Products</h3>
+      <p>We source top-selling product is herbal product like toothpaste and chavanprash</p>
+    </div>
+    <div class="highlight-card">
+      <h3>Affordable Prices</h3>
+      <p>With competitive pricing and regular deals, we help you get the most value for your money.</p>
+    </div>
+    <div class="highlight-card">
+      <h3>Fast Delivery</h3>
+      <p>Our logistics network ensures your orders arrive quickly and securely, every time.</p>
+    </div>
+  </section>
+
+</body>
+</html>

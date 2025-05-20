@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000e29;
+        }
+
+        .alert-simple {
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: light;
+            text-shadow: 2px 1px #00040a;
+            transition: 0.5s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-simple.alert-success {
+            border: 1px solid rgba(36, 241, 6, 0.46);
+            background-color: rgba(7, 149, 66, 0.12);
+            box-shadow: 0px 0px 2px #259c08;
+            color: #0ad406;
+        }
+
+        .alert-success:hover {
+            background-color: rgba(7, 149, 66, 0.35);
+        }
+
+        .alert-simple.alert-info {
+            border: 1px solid rgba(6, 44, 241, 0.46);
+            background-color: rgba(7, 73, 149, 0.12);
+            box-shadow: 0px 0px 2px #0396ff;
+            color: #0396ff;
+        }
+
+        .alert-info:hover {
+            background-color: rgba(7, 73, 149, 0.35);
+        }
+
+        .alert-simple.alert-warning {
+            border: 1px solid rgba(241, 142, 6, 0.81);
+            background-color: rgba(220, 128, 1, 0.16);
+            box-shadow: 0px 0px 2px #ffb103;
+            color: #ffb103;
+        }
+
+        .alert-warning:hover {
+            background-color: rgba(220, 128, 1, 0.33);
+        }
+
+        .alert-simple.alert-danger {
+            border: 1px solid rgba(241, 6, 6, 0.81);
+            background-color: rgba(220, 17, 1, 0.16);
+            box-shadow: 0px 0px 2px #ff0303;
+            color: #ff0303;
+        }
+
+        .alert-danger:hover {
+            background-color: rgba(220, 17, 1, 0.33);
+        }
+
+        .alert-simple.alert-primary {
+            border: 1px solid rgba(6, 241, 226, 0.81);
+            background-color: rgba(1, 204, 220, 0.16);
+            box-shadow: 0px 0px 2px #03fff5;
+            color: #03d0ff;
+        }
+
+        .alert-primary:hover {
+            background-color: rgba(1, 204, 220, 0.33);
+        }
+
+        .square_box {
+            position: absolute;
+            transform: rotate(45deg);
+            border-top-left-radius: 45px;
+            opacity: 0.302;
+        }
+
+        .square_box.box_three {
+            background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+            opacity: 0.059;
+            left: -80px;
+            top: -60px;
+            width: 500px;
+            height: 500px;
+            border-radius: 45px;
+        }
+
+        .square_box.box_four {
+            background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+            opacity: 0.059;
+            left: 150px;
+            top: -25px;
+            width: 550px;
+            height: 550px;
+            border-radius: 45px;
+        }
+
+        .icon {
+            font-size: 20px;
+        }
+
+        .icon-success {
+            color: #0ad406;
+        }
+
+        .icon-info {
+            color: #0396ff;
+        }
+
+        .icon-warning {
+            color: #ffb103;
+        }
+
+        .icon-danger {
+            color: #ff0303;
+        }
+
+        .icon-primary {
+            color: #03d0ff;
+        }
+
+         /*  */
+        .container {
+            /* max-width: 600px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
+            color: whitesmoke;
+        }
+
+        h1 {
+            font-size: 2.0rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .help-button {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 1rem;
+            color: #0984e3;
+            background: #fff;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .help-button:hover {
+            background: #0984e3;
+            color: #fff;
+        }
+/*  */
+         
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <section>
+        <div class="square_box box_three"></div>
+        <div class="square_box box_four"></div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="alert fade alert-simple alert-success">
+                        <i class="icon fas fa-check-circle icon-success"></i>
+                        <strong class="font__weight-semibold">Well done!</strong> You successfully read this important message.
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="alert fade alert-simple alert-info">
+                        <i class="icon fas fa-info-circle icon-info"></i>
+                        <strong class="font__weight-semibold">Heads up!</strong> This alert needs your attention, but it's not super important.
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="alert fade alert-simple alert-warning">
+                        <i class="icon fas fa-exclamation-triangle icon-warning"></i>
+                        <strong class="font__weight-semibold">Warning!</strong> Better check yourself, you're not looking too good.
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="alert fade alert-simple alert-danger">
+                        <i class="icon fas fa-times-circle icon-danger"></i>
+                        <strong class="font__weight-semibold">Oh snap!</strong> Change a few things up and try submitting again.
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="alert fade alert-simple alert-primary">
+                        <i class="icon fas fa-thumbs-up icon-primary"></i>
+                        <strong class="font__weight-semibold">Well done!</strong> You successfully read this important message.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h1>HELPLINE NUMBER:6679*****9/8547600750/7654622345</h1>
+       
+        <h1>Need Help?</h1>
+        <p>
+            We're here to lend a helping hand. If you have questions or need assistance, 
+            click the button below to get started. Together, we can find the answers you need.
+        </p>
+        <a href="gethelp.html" class="help-button">Get Help</a>
+    </div>
+</body>
+</html>

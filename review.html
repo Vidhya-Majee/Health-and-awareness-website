@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - CircuitCart</title>
+ <style>
+  /* reviews page  css */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #f39c12;
+}
+
+.cart-btn {
+    background-color: #f39c12;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+    background-color: #e67e22;
+}
+
+.reviews-section,
+.review-form-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.reviews-section h1,
+.review-form-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.reviews-container .review {
+    background-color: #ecf0f1;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 5px solid #f39c12;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.reviews-container .review:hover {
+    transform: scale(1.02);
+}
+
+.review h3 {
+    margin: 0 0 0.5rem;
+    color: #34495e;
+}
+
+.review-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-form-section input,
+.review-form-section textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+}
+
+/* footer */
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.footer {
+  background-color: #0d1117;
+  color: #ccc;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h3 {
+  color: #1abc9c;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #1abc9c;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #1abc9c;
+}
+
+.footer-newsletter input[type="email"] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.footer-newsletter button {
+  padding: 0.5rem 1rem;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.footer-newsletter button:hover {
+  background-color: #16a085;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+.hero-text {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.content-card {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.highlight-card {
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+ </style>
+ <script>
+  // reviews js code
+const form = document.getElementById('review-form');
+const reviewsContainer = document.getElementById('reviews-container');
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('reviewer-name').value;
+    const text = document.getElementById('review-text').value;
+
+    const reviewElement = document.createElement('div');
+    reviewElement.classList.add('review');
+    reviewElement.innerHTML = `<h3>${name}</h3><p>${text}</p>`;
+    reviewsContainer.prepend(reviewElement);
+
+    form.reset();
+});
+
+
+// validation for review form
+function review_validate()
+{
+  if(document.f1.text1.value=="")
+    {
+    alert("Enter Your Name")
+    document.f1.text1.focus()
+    return false
+    }
+if(document.f1.text2.value=="")
+    {
+    alert("Write your review Please")
+    document.f1.text2.focus()
+    return false
+    }
+    var c=confirm("Do you want to Submit your review?")
+    if(c==true)
+    {
+      alert("Do You want to cancel it");
+    }
+    else
+    {
+      alert("Do You want to Cancel");                 
+    }
+   
+}
+ </script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">HerbalNest</div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="home.html#products">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact us</a>
+            <a href="reviews.html" class="active">Reviews</a>
+        </div>
+
+    </nav>
+
+
+    <section class="reviews-section">
+        <h1>💬 Customer Reviews</h1>
+        <div class="reviews-container" id="reviews-container">
+
+        </div>
+    </section>
+
+    <section class="review-form-section">
+        <h2>📝 Leave a Review</h2>
+        <form id="review-form" name="f1">
+            <input type="text" id="reviewer-name" placeholder="Your Name"name="text1">
+            <textarea id="review-text" rows="4" placeholder="Write your review..." name="text2" ></textarea>
+            <button type="submit" class="cart-btn" onclick="review_validate()">Submit Review</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    
+ 
+</body>
+</html>

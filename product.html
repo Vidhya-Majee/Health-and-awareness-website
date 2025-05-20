@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Nest</title>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* navigation css */
+.navbar {
+    background: #2c3e50;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* search bar css */
+.search-container {
+    margin-top: 80px;
+    padding: 2rem;
+    background: #ecf0f1;
+    text-align: center;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 1rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* product css */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-info {
+    padding: 1rem 0;
+}
+
+.price {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+.cart-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* cart slidebar css */
+.cart-sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: right 0.3s;
+    padding: 1rem;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .search-bar {
+        width: 90%;
+    }
+}
+.cart-btn.small {
+background: #e74c3c;
+font-size: 0.8rem;
+padding: 0.3rem 0.6rem;
+margin-top: 0.5rem;
+}
+
+/* footer css */
+*{
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .footer {
+    background-color: #0d1117;
+    color: #ccc;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-column {
+    flex: 1 1 200px;
+  }
+  
+  .footer-column h3 {
+    color: #1abc9c;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #1abc9c;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .footer-social a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .footer-social a:hover {
+    color: #1abc9c;
+  }
+  
+  .footer-newsletter input[type="email"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .footer-newsletter button {
+    padding: 0.5rem 1rem;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .footer-newsletter button:hover {
+    background-color: #16a085;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  
+  
+  
+  
+</style>
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="logo">HerbalNest</div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="#products">Products</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact us</a>
+            <a href="help.html">Help</a>
+        </div>
+        <button class="cart-btn" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+    </nav>
+
+ 
+    <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Search products..." id="search-input">
+    </div>
+
+
+    <div class="products" id="products">
+
+    </div>
+
+   
+    <div class="cart-sidebar" id="cart-sidebar">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+        <button class="cart-btn" onclick="checkout()">Buy now</button>
+        <button class="cart-btn" onclick="toggleCart()">Cancel</button>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+          
+          <div class="footer-column">
+            <h3>About CircuitCart</h3>
+            <p>Your go-to destination for premium electronics and tech gadgets. We deliver quality and innovation right to your doorstep.</p>
+          </div>
+    
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="e-commerce.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-column footer-newsletter">
+            <h3>Subscribe</h3>
+            <input type="email" placeholder="Your email address">
+            <button>Subscribe</button>
+            <div class="footer-social">
+              <a href="#"><span>🌐</span></a>
+              <a href="#"><span>🐦</span></a>
+              <a href="#"><span>📘</span></a>
+              <a href="#"><span>📸</span></a>
+            </div>
+          </div>
+    
+        </div>
+    
+        <div class="footer-bottom">
+          <p>© <span id="year"></span> CircuitCart. All rights reserved.</p>
+        </div>
+      </footer>
+    <script>
+      // for product section
+const products = [
+    {
+        id: 1,
+        name: "Herbal Vitamin C Capsule",
+        price: 159,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQJcU1BFaDyPdmJB89fcdMrJkU_tT2u_zoVg&s",
+        description: "this capsule helps you to glow your skin skin"
+    },
+    {
+        id: 2,
+        name: "Herbal Chavanprash",
+        price: 549,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVlaLiv6BUGCWMYBV_OeNjCpXRcy6isTsl5A&s",
+        description: "this chavanprash helps you to improve your immunity power"
+    },
+    {
+        id: 3,
+        name: "Herbal Protien Biscuit",
+        price: 899,
+        image: "data:image/jpeg;base64,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",
+        description: "this biscuit full with protien and carbs"
+    },
+    {
+        id: 4,
+        name: "Herbal joint oil",
+        price: 499,
+        image: "data:image/jpeg;base64,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",
+        description: "this oil helps you to improve your joints"
+    },
+    {
+        id: 5,
+        name: "herbal toothpaste",
+        price: 589,
+        image: "data:image/jpeg;base64,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",
+        description: "this toothpaste make your teeth stronger"
+    }
+];
+
+// js code for cart section
+
+let cart = [];
+
+function initProducts() {
+    const productsContainer = document.getElementById('products');
+    products.forEach(product => {
+        const productHTML = `
+            <div class="product-card">
+                <img src="${product.image}" class="product-image" alt="${product.name}">
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p class="price">₹${product.price}</p>
+                    <button class="cart-btn" onclick="addToCart(${product.id}, this)">Add to Cart</button>
+                </div>
+            </div>
+        `;
+        productsContainer.innerHTML += productHTML;
+    });
+}
+
+function addToCart(productId, btn) {
+    const product = products.find(p => p.id === productId);
+    const existingItem = cart.find(item => item.id === productId);
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+
+    updateCartDisplay();
+    btn.innerHTML = "✓ Added";
+    setTimeout(() => btn.innerHTML = "Add to Cart", 1000);
+    alert(`✔ ${product.name} added to cart!`);
+}
+
+function updateCartDisplay() {
+    document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    cartItems.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        const itemHTML = `
+            <div class="cart-item">
+                <h4>${item.name}</h4>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Total: ₹${(item.price * item.quantity).toFixed(2)}</p>
+                <button class="cart-btn small" onclick="removeFromCart(${item.id})">Remove</button>
+            </div>
+        `;
+        cartItems.innerHTML += itemHTML;
+    });
+
+    cartTotal.innerHTML = `<h3>Total: ₹${total.toFixed(2)}</h3>`;
+}
+
+function toggleCart() {
+    document.getElementById('cart-sidebar').classList.toggle('active');
+}
+
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCartDisplay();
+}
+
+function checkout() {
+    alert('Thank you for your purchase!');
+    cart = [];
+    updateCartDisplay();
+    toggleCart();
+}
+
+document.getElementById('search-input').addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(searchTerm) ? 'block' : 'none';
+    });
+});
+
+initProducts();
+    </script>
+</body>
+</html>

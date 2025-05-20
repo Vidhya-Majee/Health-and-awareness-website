@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="link.css">
+  <title>Contact - CircuitCart</title>
+  <style>
+ /* contact page css*/
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background: linear-gradient(to right, #d9e9ff, #f8faff);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    background: #1f2937;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #00b4d8;
+  }
+
+  .content {
+    max-width: 600px;
+    background: white;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .content h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: #1f2937;
+  }
+
+  .content p {
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #00b4d8;
+    outline: none;
+  }
+
+  .contact-form button {
+    background-color: #00b4d8;
+    color: white;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .contact-form button:hover {
+    background-color: #0077b6;
+  }
+
+  @media (max-width: 600px) {
+    .content {
+      margin: 2rem 1rem;
+      padding: 1.5rem;
+    }
+  }
+
+  /* home page css is written in home page style tag */
+
+
+  /* about page css*/
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0d1117;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    position: relative;
+  }
+  
+  .nav-links a.active,
+  .nav-links a:hover {
+    font-weight: 600;
+    border-bottom: 2px solid #58a6ff;
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, #0d1117, #1f2937);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  .content-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .highlights {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .highlight-card {
+    flex: 1;
+    min-width: 250px;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+  
+  .highlight-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #0d1117;
+    color: #ccc;
+    margin-top: 3rem;
+  } 
+
+  </style>
+  <script>
+    // Contact form validation
+function contact_form()
+{
+    if(document.f1.text1.value=="")
+        {
+        alert("Enter Your Name")
+        document.f1.text1.focus()
+        return false
+        }
+    if(document.f1.text2.value=="")
+        {
+        alert("Enter Your E-mail")
+        document.f1.text2.focus()
+        return false
+        }
+    if(document.f1.text3.value=="")
+        {
+        alert("Enter Your Meassage")
+        document.f1.text3.focus()
+        return false
+        }
+        var c=confirm("Do you want to Send it?")
+        if(c==true)
+        {
+          alert("Do You want to Send it");
+        }
+        else
+        {
+          alert("Do You want to Cancel");                 
+        }
+       
+}
+
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">HerbalNest</div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="e-commerce.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact us</a>
+      <a href="reviews.html">Reviews</a>
+    </div>
+  </nav>
+
+  <section class="content">
+    <h1>Contact Us</h1>
+    <p>Have questions or feedback? Reach out to us below:</p>
+    <form class="contact-form" name="f1">
+      <input type="text" name="text1" placeholder="Your Name" />
+      <input type="email" name="text2" placeholder="Your Email"/>
+      <textarea rows="5" name="text3" placeholder="Your Message"></textarea>
+      <button type="submit" onclick="contact_form()">Send Message</button>
+    </form>
+  </section>
+     <ul>
+  
+
+</body>
+</html>
